@@ -62,11 +62,7 @@ public Loteria_Game_Beta() {
 	
 	
 	Loteria card; 
-	card = board.get(3);
-	
 
-	
-	
 	//for (int i = 0; i < dealer.size(); i++) {
 		//Loteria card;
 		//card = dealer.get(i);
@@ -112,7 +108,7 @@ public Loteria_Game_Beta() {
 	JButton r2c1 = new JButton(board.get(4).getImage());
 	JButton r2c2 = new JButton(board.get(5).getImage());
 	JButton r2c3 = new JButton(board.get(5).getImage());
-	JButton r2c4 = new JButton(board.get(6).getImage());
+	JButton r2c4 = new JButton(board.get(7).getImage());
 	rowThree.add(r2c1); 
 	rowThree.add(r2c2); 
 	rowThree.add(r2c3); 
@@ -127,10 +123,10 @@ public Loteria_Game_Beta() {
 	beanOneRowThree.setBackground(realRed);
 	beanOneRowThree.setOpaque(true);
 	rowFour.add(beanOneRowThree);
-	JButton r3c1 = new JButton(board.get(7).getImage());
-	JButton r3c2 = new JButton(board.get(8).getImage());
-	JButton r3c3 = new JButton(board.get(9).getImage());
-	JButton r3c4 = new JButton(board.get(10).getImage());
+	JButton r3c1 = new JButton(board.get(8).getImage());
+	JButton r3c2 = new JButton(board.get(9).getImage());
+	JButton r3c3 = new JButton(board.get(10).getImage());
+	JButton r3c4 = new JButton(board.get(11).getImage());
 	rowFour.add(r3c1); 
 	rowFour.add(r3c2); 
 	rowFour.add(r3c3); 
@@ -146,10 +142,10 @@ public Loteria_Game_Beta() {
 	beanOneRowFour.setBackground(realRed);
 	beanOneRowFour.setOpaque(true);
 	rowFive.add(beanOneRowFour);
-	JButton r4c1 = new JButton(board.get(11).getImage());
-	JButton r4c2 = new JButton(board.get(12).getImage());
-	JButton r4c3 = new JButton(board.get(13).getImage());
-	JButton r4c4 = new JButton(board.get(14).getImage());
+	JButton r4c1 = new JButton(board.get(12).getImage());
+	JButton r4c2 = new JButton(board.get(13).getImage());
+	JButton r4c3 = new JButton(board.get(14).getImage());
+	JButton r4c4 = new JButton(board.get(15).getImage());
 	rowFive.add(r4c1); 
 	rowFive.add(r4c2); 
 	rowFive.add(r4c3); 
