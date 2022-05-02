@@ -24,7 +24,7 @@ public class Loteria_Game_Beta extends JFrame implements ActionListener{
 public Loteria_Game_Beta() {
 	setTitle("Loteria");
 	setLayout(new GridLayout(6, 1));
-	setPreferredSize(new Dimension(750,900)); 
+	setPreferredSize(new Dimension(774,900)); 
 	Color realRed = new Color(219,0,0);
 	
 	
