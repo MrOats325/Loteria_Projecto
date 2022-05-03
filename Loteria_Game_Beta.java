@@ -8,12 +8,9 @@ import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.awt.Image; 
-import javax.swing.Icon; 
-import javax.swing.ImageIcon; 
-
 
 import Loteria_Project.*;
+import ch06.apps.Card;
 
 
  
@@ -47,36 +44,67 @@ public Loteria_Game_Beta() {
 	
 	
 	Loteria_Cards loteria = new Loteria_Cards();
+	Loteria_Cards dealt = new Loteria_Cards();
+	
 	loteria.shuffle();
+	dealt.shuffle();
 	
-	//loteria.shuffle();
 	
-	SortedABList<Loteria> dealer = new SortedABList();
-	SortedABList<Loteria> board = new SortedABList();
+	ABList<Loteria> board = new ABList();
+	ABList<Loteria> dealer = new ABList();
 	
-	//dealer.add(loteria.nextCard());
-	
-	for (int i = 0; i < 16; i++) {
+	for(int i = 0; i < 16; i++) {
 		board.add(loteria.nextCard());
 	}
+
 	
 	
-	Loteria card; 
-
-	//for (int i = 0; i < dealer.size(); i++) {
-		//Loteria card;
-		//card = dealer.get(i);
-		//JLabel labelOne = new JLabel();
-		//labelOne.setIcon(card.getImage());
-		//rowOne.add(labelOne);
-		
-	//}
-
 	
 	rowOne.setBackground(realRed);
 	rowOne.setOpaque(true);
 	
 	
+	
+	
+	
+	
+	JLabel changer = new JLabel();
+	JLabel blank = new JLabel();
+	
+	
+
+	dealer.add(dealt.nextCard()); 
+	changer.setIcon(dealer.get(0).getImage());
+	
+	
+	final JFrame frm = new JFrame("Countdown");
+    final JLabel countdownLabel = new JLabel("00:00");
+	final Timer t = new Timer(1000, new ActionListener() {
+        int time = 0;
+        public void actionPerformed(ActionEvent e) {
+            time++;
+            countdownLabel.setText(format(time / 60) + ":" + format(time % 60));
+            if (time == 0) {
+                final Timer timer = (Timer) e.getSource();
+                timer.stop();
+            }
+            if (time % 5 == 0) {
+               System.out.println("Change Cards");
+            }
+            
+            
+        }
+    });
+	
+	
+	
+	
+	rowOne.add(changer); 
+	rowOne.add(countdownLabel); 
+	t.start();
+	rowOne.add(blank); 
+	
+	//JButton r1c1 = new JButton(board.get(0).getImage());
 	//Loteria Row 1 
 	ImageIcon cactus = new ImageIcon("src/Loteria_Project/LoteriaPDF/sombrero.png");	
 	JLabel beanOneRowOne = new JLabel(cactus);
@@ -87,6 +115,14 @@ public Loteria_Game_Beta() {
 	JButton r1c2 = new JButton(board.get(1).getImage()); 
 	JButton r1c3 = new JButton(board.get(2).getImage());
 	JButton r1c4 = new JButton(board.get(3).getImage());
+	r1c1.setBackground(realRed);
+	r1c2.setBackground(realRed);
+	r1c3.setBackground(realRed);
+	r1c4.setBackground(realRed);
+	r1c1.setBorderPainted(false);
+	r1c2.setBorderPainted(false);
+	r1c3.setBorderPainted(false);
+	r1c4.setBorderPainted(false);
 	rowTwo.add(r1c1); 
 	rowTwo.add(r1c2); 
 	rowTwo.add(r1c3); 
@@ -95,8 +131,7 @@ public Loteria_Game_Beta() {
 	beanTwoRowOne.setBackground(realRed);
 	beanTwoRowOne.setOpaque(true);
 	rowTwo.add(beanTwoRowOne);
-
-
+	
 	
 
 	//Loteria Row 2
@@ -107,8 +142,16 @@ public Loteria_Game_Beta() {
 	rowThree.add(beanOneRowTwo);
 	JButton r2c1 = new JButton(board.get(4).getImage());
 	JButton r2c2 = new JButton(board.get(5).getImage());
-	JButton r2c3 = new JButton(board.get(5).getImage());
+	JButton r2c3 = new JButton(board.get(6).getImage());
 	JButton r2c4 = new JButton(board.get(7).getImage());
+	r2c1.setBackground(realRed);
+	r2c2.setBackground(realRed);
+	r2c3.setBackground(realRed);
+	r2c4.setBackground(realRed);
+	r2c1.setBorderPainted(false);
+	r2c2.setBorderPainted(false);
+	r2c3.setBorderPainted(false);
+	r2c4.setBorderPainted(false);
 	rowThree.add(r2c1); 
 	rowThree.add(r2c2); 
 	rowThree.add(r2c3); 
@@ -127,6 +170,14 @@ public Loteria_Game_Beta() {
 	JButton r3c2 = new JButton(board.get(9).getImage());
 	JButton r3c3 = new JButton(board.get(10).getImage());
 	JButton r3c4 = new JButton(board.get(11).getImage());
+	r3c1.setBackground(realRed);
+	r3c2.setBackground(realRed);
+	r3c3.setBackground(realRed);
+	r3c4.setBackground(realRed);
+	r3c1.setBorderPainted(false);
+	r3c2.setBorderPainted(false);
+	r3c3.setBorderPainted(false);
+	r3c4.setBorderPainted(false);
 	rowFour.add(r3c1); 
 	rowFour.add(r3c2); 
 	rowFour.add(r3c3); 
@@ -146,6 +197,14 @@ public Loteria_Game_Beta() {
 	JButton r4c2 = new JButton(board.get(13).getImage());
 	JButton r4c3 = new JButton(board.get(14).getImage());
 	JButton r4c4 = new JButton(board.get(15).getImage());
+	r4c1.setBackground(realRed);
+	r4c2.setBackground(realRed);
+	r4c3.setBackground(realRed);
+	r4c4.setBackground(realRed);
+	r4c1.setBorderPainted(false);
+	r4c2.setBorderPainted(false);
+	r4c3.setBorderPainted(false);
+	r4c4.setBorderPainted(false);
 	rowFive.add(r4c1); 
 	rowFive.add(r4c2); 
 	rowFive.add(r4c3); 
@@ -173,11 +232,12 @@ public Loteria_Game_Beta() {
 }
 	
 
-
-private static Icon resizeIcon(ImageIcon icon, int resizedWidth, int resizedHeight) {
-    Image img = icon.getImage();  
-    Image resizedImage = img.getScaledInstance(resizedWidth, resizedHeight,  java.awt.Image.SCALE_SMOOTH);  
-    return new ImageIcon(resizedImage);
+private static String format(int i) {
+    String result = String.valueOf(i);
+    if (result.length() == 1) {
+        result = "0" + result;
+    }
+    return result;
 }
 
 public static void main(String[] args) {

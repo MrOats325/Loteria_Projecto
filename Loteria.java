@@ -5,8 +5,8 @@ import javax.swing.ImageIcon;
 
 public class Loteria implements Comparable<Loteria> {
 	public enum Rank {
-		One, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Eleven, Twelve, Thirteen, Fourteen, Fifthteen, Sixteeen, Seventeen, Eightteen, 
-		Nineteen, Twenty, Twentyone, Twentytwo, Twentythree, Twentyfour, Twentyfive, Twetysix, Twetyseven, Twetnyeight, Twetnynine, Thirdy,  
+		One, Two, Three, Four, Five, Six, Seven, Eight, Nine, Ten, Eleven, Twelve, Thirteen, Fourteen, Fifthteen, Sixteen, Seventeen, Eightteen, 
+		Nineteen, Twenty, Twentyone, Twentytwo, Twentythree, Twentyfour, Twentyfive, Twentysix, Twentyseven, Twentyeight, Twentynine, Thirty,  
 		Thirtyone, Thirtytwo, Thirtythree, Thirtyfour, Thirtyfive, Thirtysix, Thirtyseven, Thirtyeight, Thirtynine, Fourty, Fourtyone, Fourtytwo, 
 		Fourtythree, Fourtyfive, Fourtysix, Fourtyseven, Fourtyeight, Fourtynine, Fifty, Fiftyone, Fiftytwo, Fiftythree, Fiftyfour
 	}
