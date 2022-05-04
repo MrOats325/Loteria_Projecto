@@ -246,6 +246,7 @@ public class Loteria_Game_Beta extends JFrame implements ActionListener {
 			for(int i = 0; i < dealer.size(); i++) {
 				if(board.get(0).getRank().equals(dealer.get(i).getRank())) {
 					r1c1.setEnabled(false);
+					System.out.println("r1c1 was pressed"); 
 				}
 			}
 		}
@@ -253,6 +254,7 @@ public class Loteria_Game_Beta extends JFrame implements ActionListener {
 			for(int i = 0; i < dealer.size(); i++) {
 				if(board.get(1).getRank().equals(dealer.get(i).getRank())) {
 					r1c2.setEnabled(false);
+					System.out.println("r1c2 was pressed"); 
 				}
 			}
 		}
@@ -260,6 +262,7 @@ public class Loteria_Game_Beta extends JFrame implements ActionListener {
 			for(int i = 0; i < dealer.size(); i++) {
 				if(board.get(2).getRank().equals(dealer.get(i).getRank())) {
 					r1c3.setEnabled(false);
+					System.out.println("r1c3 was pressed"); 
 				}
 			}
 		}
@@ -267,6 +270,7 @@ public class Loteria_Game_Beta extends JFrame implements ActionListener {
 			for(int i = 0; i < dealer.size(); i++) {
 				if(board.get(3).getRank().equals(dealer.get(i).getRank())) {
 					r1c4.setEnabled(false);
+					System.out.println("r1c4 was pressed"); 
 				}
 			}
 		}
@@ -274,6 +278,7 @@ public class Loteria_Game_Beta extends JFrame implements ActionListener {
 			for(int i = 0; i < dealer.size(); i++) {
 				if(board.get(4).getRank().equals(dealer.get(i).getRank())) {
 					r2c1.setEnabled(false);
+					System.out.println("r2c1 was pressed"); 
 				}
 			}
 		}
@@ -281,6 +286,7 @@ public class Loteria_Game_Beta extends JFrame implements ActionListener {
 			for(int i = 0; i < dealer.size(); i++) {
 				if(board.get(5).getRank().equals(dealer.get(i).getRank())) {
 					r2c2.setEnabled(false);
+					System.out.println("r2c2 was pressed"); 
 				}
 			}
 		}
@@ -288,6 +294,7 @@ public class Loteria_Game_Beta extends JFrame implements ActionListener {
 			for(int i = 0; i < dealer.size(); i++) {
 				if(board.get(6).getRank().equals(dealer.get(i).getRank())) {
 					r2c3.setEnabled(false);
+					System.out.println("r2c3 was pressed"); 
 				}
 			}
 		}
@@ -295,6 +302,7 @@ public class Loteria_Game_Beta extends JFrame implements ActionListener {
 			for(int i = 0; i < dealer.size(); i++) {
 				if(board.get(7).getRank().equals(dealer.get(i).getRank())) {
 					r2c4.setEnabled(false);
+					System.out.println("r2c4 was pressed"); 
 				}
 			}
 		}
@@ -303,6 +311,7 @@ public class Loteria_Game_Beta extends JFrame implements ActionListener {
 			for(int i = 0; i < dealer.size(); i++) {
 				if(board.get(8).getRank().equals(dealer.get(i).getRank())) {
 					r3c1.setEnabled(false);
+					System.out.println("r3c1 was pressed"); 
 				}
 			}
 		}
@@ -310,6 +319,7 @@ public class Loteria_Game_Beta extends JFrame implements ActionListener {
 			for(int i = 0; i < dealer.size(); i++) {
 				if(board.get(9).getRank().equals(dealer.get(i).getRank())) {
 					r3c2.setEnabled(false);
+					System.out.println("r3c2 was pressed"); 
 				}
 			}
 		}
@@ -317,6 +327,7 @@ public class Loteria_Game_Beta extends JFrame implements ActionListener {
 			for(int i = 0; i < dealer.size(); i++) {
 				if(board.get(10).getRank().equals(dealer.get(i).getRank())) {
 					r3c3.setEnabled(false);
+					System.out.println("r3c3 was pressed"); 
 				}
 			}
 		}
@@ -324,6 +335,7 @@ public class Loteria_Game_Beta extends JFrame implements ActionListener {
 			for(int i = 0; i < dealer.size(); i++) {
 				if(board.get(11).getRank().equals(dealer.get(i).getRank())) {
 					r3c4.setEnabled(false);
+					System.out.println("r3c4 was pressed"); 
 				}
 			}
 		}
@@ -332,6 +344,8 @@ public class Loteria_Game_Beta extends JFrame implements ActionListener {
 			for(int i = 0; i < dealer.size(); i++) {
 				if(board.get(12).getRank().equals(dealer.get(i).getRank())) {
 					r4c1.setEnabled(false);
+					System.out.println("r4c1 was pressed"); 
+					
 				}
 			}
 		}
@@ -339,6 +353,8 @@ public class Loteria_Game_Beta extends JFrame implements ActionListener {
 			for(int i = 0; i < dealer.size(); i++) {
 				if(board.get(13).getRank().equals(dealer.get(i).getRank())) {
 					r4c2.setEnabled(false);
+					System.out.println("r4c2 was pressed"); 
+					
 				}
 			}
 		}
@@ -346,6 +362,8 @@ public class Loteria_Game_Beta extends JFrame implements ActionListener {
 			for(int i = 0; i < dealer.size(); i++) {
 				if(board.get(14).getRank().equals(dealer.get(i).getRank())) {
 					r4c3.setEnabled(false);
+					System.out.println("r4c3 was pressed"); 
+					
 				}
 			}
 		}
@@ -353,19 +371,47 @@ public class Loteria_Game_Beta extends JFrame implements ActionListener {
 			for(int i = 0; i < dealer.size(); i++) {
 				if(board.get(15).getRank().equals(dealer.get(i).getRank())) {
 					r4c4.setEnabled(false);
+					System.out.println("r4c4 was pressed"); 
+					
 				}
 			}
 		}
 	
+		//Wining The Game 
+	
+		//4 Corners 
+		if(!r1c1.isEnabled() && !r1c4.isEnabled() && !r4c1.isEnabled() && !r4c4.isEnabled()) {
+			System.out.println("You've won 4 Corners"); 
+		}
+		
+		//Vertical Line  
+		if(!r1c2.isEnabled() && !r2c2.isEnabled() && !r3c2.isEnabled() && !r4c2.isEnabled()) {
+			System.out.println("You've won Vertical Line"); 
+		}
+		
+		//Horizontal Line 
+		if(!r2c1.isEnabled() && !r2c2.isEnabled() && !r2c3.isEnabled() && !r2c4.isEnabled()) {
+			System.out.println("You've won Horizontal Line"); 
+		}
+		
+		//Diagonal 
+		if(!r1c4.isEnabled() && !r2c3.isEnabled() && !r3c2.isEnabled() && !r4c1.isEnabled()) {
+			System.out.println("You've won Diagonal"); 
+		}
+		
+		//4 in Corner
+		if(!r1c1.isEnabled() && !r1c2.isEnabled() && !r2c1.isEnabled() && !r2c2.isEnabled()) {
+			System.out.println("You've won 4 Corners"); 
+		}
+		
+		
+		
+		
+		
 	
 	
 	
-	
-	
-	
-	
-	
-	
+
 	}
 
 }
