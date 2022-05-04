@@ -1,4 +1,4 @@
-package Loteria_Project;
+package Loteria_Project.src;
 
 import java.util.Random;
 import java.util.Iterator;

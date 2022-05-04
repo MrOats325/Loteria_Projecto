@@ -9,7 +9,7 @@
 // made to the list is through the remove method of the iterator.
 //----------------------------------------------------------------------------
 
-package Loteria_Project;
+package Loteria_Project.src;
 
 import java.util.*;
 

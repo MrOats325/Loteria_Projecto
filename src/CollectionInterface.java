@@ -7,7 +7,7 @@
 // Nullelements are not allowed. Duplicate elements are allowed.
 //----------------------------------------------------------------------------
 
-package Loteria_Project;
+package Loteria_Project.src;
 
 public interface CollectionInterface<T>
 {

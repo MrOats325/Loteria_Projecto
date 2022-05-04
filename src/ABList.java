@@ -9,7 +9,7 @@
 // original capacity.
 //----------------------------------------------------------------------------
 
-package Loteria_Project;
+package Loteria_Project.src;
 
 import java.util.Iterator;
 
