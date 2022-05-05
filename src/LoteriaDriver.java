@@ -1,5 +1,7 @@
 package Loteria_Project.src;
 
+import java.awt.Color;
+
 import javax.swing.JFrame;
 
 public class LoteriaDriver {
@@ -15,6 +17,8 @@ public class LoteriaDriver {
 	/** Displays The Game*/ 
 	private static JFrame gameFrame; 
 	
+	Color realRed = new Color(219,0,0);
+	
     /**
      * Given an int, switches to the corresponding JFrame (1, 2, 3, or 4).
      */
@@ -24,7 +28,7 @@ public class LoteriaDriver {
 			displayFrame.setVisible(true);
 			buttonFrame.setVisible(false);
 			instructionsFrame.setVisible(false);
-			gameFrame.setVisible(false);
+			//gameFrame.setVisible(false);
             
 			displayFrame.setLocation(instructionsFrame.getX(), instructionsFrame.getY());
 			displayFrame.setSize(instructionsFrame.getWidth(), instructionsFrame.getHeight());
@@ -33,8 +37,8 @@ public class LoteriaDriver {
 		else if(num == 2) {
 			displayFrame.setVisible(false); 
 			buttonFrame.setVisible(true);
-			instructionsFrame.setVisible(false);
-          
+			//instructionsFrame.setVisible(false);
+			
 			buttonFrame.setLocation(displayFrame.getX(), displayFrame.getY());
 			buttonFrame.setSize(displayFrame.getWidth(), displayFrame.getHeight());
         }
@@ -73,15 +77,15 @@ public class LoteriaDriver {
 	public static void main(String[] args) {
 		displayFrame = new JFrame("Lotreia");
         setFrame(displayFrame);
-        //displayFrame.setContentPane(new TitleScreen());
+        displayFrame.setContentPane(new DisplayScreen());
         displayFrame.setVisible(true);
         
         
-//        frame2 = new JFrame("Choose your character");
-//        setFrame(frame2);
-//        frame2.setContentPane(new CharacterSelectScreen());
-//        frame2.setVisible(false);
-//        
+        buttonFrame = new JFrame("Loteria Main Screen");
+        setFrame(buttonFrame); 
+        buttonFrame.setContentPane(new Main_Menu_Loteria());
+        buttonFrame.setVisible(false);
+        
 //        frame3 = new JFrame("Super Mario Craps");
 //        setFrame(frame3);
 //        frame3.setContentPane(new CrapsPanel());
