@@ -13,6 +13,7 @@ import Loteria_Project.*;
 import ch06.apps.Card;
 
 public class Loteria_Game_Beta extends JFrame implements ActionListener {
+	
 	Loteria_Cards loteria, dealt;
 	ABList<Loteria> dealer, board;
 	JLabel changer;

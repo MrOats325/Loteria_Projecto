@@ -3,6 +3,8 @@ package Loteria_Project.src;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
@@ -12,9 +14,13 @@ public class Main_Menu_Loteria extends JFrame implements ActionListener{
 		JButton play_game, instructions, quit; 
 		Color realRed = new Color(219,0,0);
 		
+		
+		
 		public Main_Menu_Loteria() {
 			setTitle("Main Menu");
-	
+			setBackground(realRed);
+			
+		
 			play_game = new JButton();
 			instructions = new JButton();
 			quit = new JButton();
@@ -56,6 +62,7 @@ public class Main_Menu_Loteria extends JFrame implements ActionListener{
 			
 			
 			//pack();
+			
 			setLocationRelativeTo(null);
 			setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 
@@ -75,7 +82,7 @@ public class Main_Menu_Loteria extends JFrame implements ActionListener{
 		}
 		
 		if(e.getSource() == play_game) {
-			//Loteria_Game_Beta.changeFrame(2);
+			 System.out.println("Play_gamo");
 			
 		}
 		
@@ -86,9 +93,7 @@ public class Main_Menu_Loteria extends JFrame implements ActionListener{
 			instructo.setLocationRelativeTo(null);
 			instructo.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
 			instructo.setVisible(true);
-			
-			
-			
+	
 		}
 		
 	}
