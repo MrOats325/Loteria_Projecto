@@ -40,7 +40,6 @@ public class DisplayScreen extends JPanel {
     private class Listener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             LoteriaDriver.changeFrame(2);
-        	//System.out.println("Going to button screen");
         }
     }
 }

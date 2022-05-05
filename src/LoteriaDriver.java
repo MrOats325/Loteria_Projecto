@@ -28,7 +28,7 @@ public class LoteriaDriver {
 			displayFrame.setVisible(true);
 			buttonFrame.setVisible(false);
 			instructionsFrame.setVisible(false);
-			//gameFrame.setVisible(false);
+			gameFrame.setVisible(false);
             
 			displayFrame.setLocation(instructionsFrame.getX(), instructionsFrame.getY());
 			displayFrame.setSize(instructionsFrame.getWidth(), instructionsFrame.getHeight());
@@ -37,7 +37,9 @@ public class LoteriaDriver {
 		else if(num == 2) {
 			displayFrame.setVisible(false); 
 			buttonFrame.setVisible(true);
-			//instructionsFrame.setVisible(false);
+			instructionsFrame.setVisible(false);
+			gameFrame.setVisible(false);
+
 			
 			buttonFrame.setLocation(displayFrame.getX(), displayFrame.getY());
 			buttonFrame.setSize(displayFrame.getWidth(), displayFrame.getHeight());
@@ -47,15 +49,29 @@ public class LoteriaDriver {
 			displayFrame.setVisible(false);
 			buttonFrame.setVisible(false);       
 			instructionsFrame.setVisible(true);
+			gameFrame.setVisible(false);
+
             
 			instructionsFrame.setLocation(buttonFrame.getX(), buttonFrame.getY());
 			instructionsFrame.setSize(buttonFrame.getWidth(), buttonFrame.getHeight());            
 
-            // Replace the content in frame3 with a new CrapsPanel.
-			instructionsFrame.getContentPane().removeAll();
-			//instructionsFrame.getContentPane().add(new CrapsPanel());
-			instructionsFrame.revalidate();
-			instructionsFrame.repaint();
+        }
+		
+		else if (num == 4) {
+			displayFrame.setVisible(false);
+			buttonFrame.setVisible(false);       
+			instructionsFrame.setVisible(false);
+			gameFrame.setVisible(true);
+
+            
+			//gameFrame.setLocation(buttonFrame.getX(), buttonFrame.getY());
+			//gameFrame.setSize(buttonFrame.getWidth(), buttonFrame.getHeight());            
+
+            // Replace the content in frame3 with a new LoteriaPanel.
+			gameFrame.getContentPane().removeAll();
+			//gameFrame.getContentPane().add(new CrapsPanel());
+			gameFrame.revalidate();
+			gameFrame.repaint();
         }
 		
 	}
@@ -86,10 +102,16 @@ public class LoteriaDriver {
         buttonFrame.setContentPane(new Main_Menu_Loteria());
         buttonFrame.setVisible(false);
         
-//        frame3 = new JFrame("Super Mario Craps");
-//        setFrame(frame3);
-//        frame3.setContentPane(new CrapsPanel());
-//        frame3.setVisible(false);
+        
+        instructionsFrame = new JFrame("Instruction Screen");
+        setFrame(buttonFrame); 
+        //buttonFrame.setContentPane(new InstructionScreen());
+        buttonFrame.setVisible(false);
+        
+        gameFrame = new JFrame("Loteria Game");
+        setFrame(gameFrame); 
+        //buttonFrame.setContentPane(new Main_Menu_Loteria());
+        gameFrame.setVisible(false);
 
 	}
 	

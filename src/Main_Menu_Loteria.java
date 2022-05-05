@@ -52,9 +52,7 @@ public class Main_Menu_Loteria extends JPanel implements ActionListener {
 		add(play_game);
 		add(instructions);
 		add(quit);
-
-		// pack();
-
+		
 	}
 
 	public void actionPerformed(ActionEvent e) {
@@ -63,18 +61,12 @@ public class Main_Menu_Loteria extends JPanel implements ActionListener {
 		}
 
 		if (e.getSource() == play_game) {
-			System.out.println("Play_gamo");
+			LoteriaDriver.changeFrame(4);
 
 		}
 
 		if (e.getSource() == instructions) {
-			System.out.println("Play_gamo");
-			// JFrame instructo = new JFrame();
-			// instructo.setSize(700, 300);
-			// instructo.setLocationRelativeTo(null);
-			// instructo.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-			// instructo.setVisible(true);
-
+			LoteriaDriver.changeFrame(3);
 		}
 
 	}
