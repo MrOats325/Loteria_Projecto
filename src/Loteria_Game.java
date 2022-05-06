@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.event.*;
 
 
-public class Loteria_Game extends JPanel {
+public class Loteria_Game extends JPanel implements ActionListener{
 	/** The creates deck of loteria cards to load the board */
     private Loteria_Cards loteria;
     
@@ -31,6 +31,14 @@ public class Loteria_Game extends JPanel {
     /** Generates the fourth row buttons for the board */
     private JButton r4c1, r4c2, r4c3, r4c4;
     
-
+    private static final Color GREEN = new Color(200, 255, 200);
+    private static final Color BLUE = new Color(200, 200, 255);
+	
+    
+    public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+    
 
 }

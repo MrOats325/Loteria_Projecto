@@ -30,8 +30,8 @@ public class LoteriaDriver {
 			instructionsFrame.setVisible(false);
 			gameFrame.setVisible(false);
             
-			displayFrame.setLocation(instructionsFrame.getX(), instructionsFrame.getY());
-			displayFrame.setSize(instructionsFrame.getWidth(), instructionsFrame.getHeight());
+			displayFrame.setLocation(buttonFrame.getX(), buttonFrame.getY());
+			displayFrame.setSize(buttonFrame.getWidth(), buttonFrame.getHeight());
         }
 		
 		else if(num == 2) {
@@ -89,6 +89,12 @@ public class LoteriaDriver {
         jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
     }
     
+    private static void instro_frame(JFrame jf) {
+    	jf.setSize(769, 413);
+    	jf.setLocationRelativeTo( null );
+        jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+    }
+    
     
 	public static void main(String[] args) {
 		displayFrame = new JFrame("Lotreia");
@@ -104,9 +110,9 @@ public class LoteriaDriver {
         
         
         instructionsFrame = new JFrame("Instruction Screen");
-        setFrame(buttonFrame); 
-        //buttonFrame.setContentPane(new InstructionScreen());
-        buttonFrame.setVisible(false);
+        instro_frame(instructionsFrame); 
+        instructionsFrame.setContentPane(new Loteria_Instructions());
+        instructionsFrame.setVisible(false);
         
         gameFrame = new JFrame("Loteria Game");
         setFrame(gameFrame); 

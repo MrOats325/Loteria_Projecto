@@ -2,15 +2,8 @@ package Loteria_Project.src;
 
 import java.awt.*;
 
-import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.event.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
-
-import Loteria_Project.*;
-import ch06.apps.Card;
 
 public class Loteria_Game_Beta extends JFrame implements ActionListener {
 	
