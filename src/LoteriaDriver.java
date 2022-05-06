@@ -4,6 +4,7 @@ import java.awt.Color;
 
 import javax.swing.JFrame;
 
+
 public class LoteriaDriver {
 	/** Displays Title Screen*/
 	private static JFrame displayFrame; 
@@ -17,7 +18,7 @@ public class LoteriaDriver {
 	/** Displays The Game*/ 
 	private static JFrame gameFrame; 
 	
-	Color realRed = new Color(219,0,0);
+	static Color realRed = new Color(219,0,0);
 	
     /**
      * Given an int, switches to the corresponding JFrame (1, 2, 3, or 4).
@@ -91,8 +92,11 @@ public class LoteriaDriver {
     
     private static void instro_frame(JFrame jf) {
     	jf.setSize(769, 413);
+    	jf.setBackground(realRed);
     	jf.setLocationRelativeTo( null );
-        jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        jf.pack();
+    	jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        
     }
     
     

@@ -3,37 +3,46 @@ package Loteria_Project.src;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.io.File;
-import java.io.IOException;
-
 import javax.swing.*;
 import javax.swing.border.EtchedBorder;
 
 public class Loteria_Instructions extends JPanel implements ActionListener {
 	JLabel instro;
-	JButton butto; 
-	
-	
+	JButton playGame;
+	Color realRed = new Color(219, 0, 0);
+
 	public Loteria_Instructions() {
-				
+
 		ImageIcon backdrop = new ImageIcon("src/Loteria_Project/LoteriaPDF/instructions.png");
+
 		instro = new JLabel(backdrop);
-		
+
 		instro.setOpaque(true);
+
+		instro.setBounds(0, 0, 850, 550);
 		
-		instro.setBounds(769, 413, 385, 207);
+		playGame = new JButton(); 
+		playGame.setBounds(315,362,235,105); 
+		playGame.setFont(new Font("Comic Sans", Font.BOLD, 25)); 
+		playGame.setText("Play Game");
+		playGame.addActionListener(this);
+		playGame.setBackground(realRed);
 
 		
+
+		instro.setBackground(realRed);
 		add(instro);
+		add(playGame); 
 		setLayout(null);
 		setVisible(true);
-		
+
 	}
-	
-	
+
 	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		
+		if (e.getSource() == playGame) {
+			LoteriaDriver.changeFrame(4);
+		}
+
 	}
 
 }

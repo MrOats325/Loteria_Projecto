@@ -1,5 +1,6 @@
 package Loteria_Project.src;
 
+import java.awt.Color;
 import java.awt.GridLayout;
 
 import java.awt.event.ActionEvent;
@@ -20,13 +21,17 @@ public class DisplayScreen extends JPanel {
 	/** play button 
 	*/
     private JButton button;
-    
+	private Color realRed = new Color(219, 0, 0);
+
+	
     public DisplayScreen() {
         setLayout(new GridLayout(1,1));
 
         button = new JButton();
-        button.setIcon(new ImageIcon("src/Loteria_Project/LoteriaPDF/background_drop.jpg"));
+        button.setIcon(new ImageIcon("src/Loteria_Project/LoteriaPDF/Loteria_loadingscreen.png"));
         button.addActionListener(new Listener());
+        button.setBackground(realRed);
+        
 
         add(button);
     }
