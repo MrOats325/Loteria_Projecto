@@ -49,7 +49,7 @@ public class Loteria_Game_Beta extends JFrame implements ActionListener {
 		rowOne.setOpaque(true);
 
 		changer = new JLabel();
-		JLabel blank = new JLabel();
+		//JLabel blank = new JLabel();
 
 		dealer.add(dealt.nextCard());
 		changer.setIcon(dealer.get(0).getImage());
@@ -82,7 +82,7 @@ public class Loteria_Game_Beta extends JFrame implements ActionListener {
 		rowOne.add(changer);
 		rowOne.add(countdownLabel);
 		t.start();
-		rowOne.add(blank);
+		//rowOne.add(blank);
 
 		// JButton r1c1 = new JButton(board.get(0).getImage());
 		// Loteria Row 1
