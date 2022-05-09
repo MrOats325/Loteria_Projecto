@@ -4,6 +4,7 @@ import java.awt.*;
 
 import javax.swing.*;
 import java.awt.event.*;
+import java.util.Random;
 
 
 public class Loteria_Game extends JPanel implements ActionListener{
@@ -34,6 +35,17 @@ public class Loteria_Game extends JPanel implements ActionListener{
     private JLabel changer; 
     
     private JButton checker; 
+    
+    private Random rand; 
+    
+    private JLabel to_win; 
+    
+    private JLabel holder;
+    
+    private JLabel board_win; 
+    
+    
+    private int which_board;
     
     private static final Color GREEN = new Color(200, 255, 200);
     private static final Color BLUE = new Color(200, 200, 255);
@@ -66,7 +78,6 @@ public class Loteria_Game extends JPanel implements ActionListener{
 		changer = new JLabel(); 
 		dealer.add(dealt.nextCard());
 		changer.setIcon(dealer.get(0).getImage());
-		System.out.println(dealer.get(0).getRank());
 		changer.setBounds(1150, 250, 130, 150);
 		add(changer);
 		
@@ -84,10 +95,8 @@ public class Loteria_Game extends JPanel implements ActionListener{
 					timer.stop();
 				}
 				if (time % 5 == 0) {
-					//System.out.println(index_of_dealt);
 					dealer.add(dealt.nextCard());
 					changer.setIcon(dealer.get(index_of_dealt).getImage());
-					System.out.println(dealer.get(index_of_dealt).getRank());
 					index_of_dealt += 1;
 
 				}
@@ -103,6 +112,10 @@ public class Loteria_Game extends JPanel implements ActionListener{
 		r1c3 = new JButton(board.get(2).getImage());
 		r1c4 = new JButton(board.get(3).getImage());
 		
+		r1c1.addActionListener(this);
+		r1c2.addActionListener(this);
+		r1c3.addActionListener(this);
+		r1c4.addActionListener(this);
 		
 		r1c1.setBounds(450, 20, 130, 150);
 		r1c2.setBounds(575, 20, 130, 150);
@@ -130,6 +143,10 @@ public class Loteria_Game extends JPanel implements ActionListener{
 		r2c3 = new JButton(board.get(6).getImage());
 		r2c4 = new JButton(board.get(7).getImage());
 		
+		r2c1.addActionListener(this);
+		r2c2.addActionListener(this);
+		r2c3.addActionListener(this);
+		r2c4.addActionListener(this);
 		
 		r2c1.setBounds(450, 190, 130, 150);
 		r2c2.setBounds(575, 190, 130, 150);
@@ -157,6 +174,10 @@ public class Loteria_Game extends JPanel implements ActionListener{
 		r3c3 = new JButton(board.get(10).getImage());
 		r3c4 = new JButton(board.get(11).getImage());
 		
+		r3c1.addActionListener(this);
+		r3c2.addActionListener(this);
+		r3c3.addActionListener(this);
+		r3c4.addActionListener(this);
 		
 		r3c1.setBounds(450, 360, 130, 150);
 		r3c2.setBounds(575, 360, 130, 150);
@@ -184,6 +205,10 @@ public class Loteria_Game extends JPanel implements ActionListener{
 		r4c3 = new JButton(board.get(14).getImage());
 		r4c4 = new JButton(board.get(15).getImage());
 		
+		r4c1.addActionListener(this);
+		r4c2.addActionListener(this);
+		r4c3.addActionListener(this);
+		r4c4.addActionListener(this);
 		
 		r4c1.setBounds(450, 530, 130, 150);
 		r4c2.setBounds(575, 530, 130, 150);
@@ -208,9 +233,38 @@ public class Loteria_Game extends JPanel implements ActionListener{
 		//Button 
 		checker = new JButton();
 		checker.setBounds(1035, 400, 350, 150);
+		checker.addActionListener(this);
+		checker.setFont(new Font("Comic Sans", Font.BOLD, 55)); 
+		checker.setBackground(realRed);
+		checker.setText("Loteria");
+		checker.setForeground(Color.BLACK);
 		add(checker); 
 		
+		//Deciding how to win 
+		rand = new Random();
+		which_board = rand.nextInt(5);
 		
+		holder = new JLabel(); 
+		to_win = new JLabel(); 
+		board_win = new JLabel();
+		
+		//Setting To win Label 
+		to_win.setBounds(100, 100, 150, 150);
+		to_win.setFont(new Font("Serif", Font.BOLD, 35)); 
+		to_win.setText("TO WIN");
+		to_win.setBackground(realRed);
+		to_win.setForeground(Color.BLACK);
+		add(to_win);
+		
+		//Setting How to win
+		board_win.setBounds(100, 300, 150, 150);
+		board_win.setFont(new Font("Serif", Font.BOLD, 25)); 
+		board_win.setBackground(realRed);
+		board_win.setForeground(Color.BLACK);
+		add(board_win);
+		
+		
+		howTo(which_board);
 		setBackground(realRed);
 		setLayout(null); 
 		setVisible(true);
@@ -219,11 +273,190 @@ public class Loteria_Game extends JPanel implements ActionListener{
     
     
     public void actionPerformed(ActionEvent e) {
+		if (e.getSource() == r1c1) {
+			for(int i = 0; i < dealer.size(); i++) {
+				if(board.get(0).getRank().equals(dealer.get(i).getRank())) {
+					r1c1.setEnabled(false);
+					System.out.println("r1c1 was pressed"); 
+				}
+			}
+		}
+		if (e.getSource() == r1c2) {
+			for(int i = 0; i < dealer.size(); i++) {
+				if(board.get(1).getRank().equals(dealer.get(i).getRank())) {
+					r1c2.setEnabled(false);
+					System.out.println("r1c2 was pressed"); 
+				}
+			}
+		}
+		if (e.getSource() == r1c3) {
+			for(int i = 0; i < dealer.size(); i++) {
+				if(board.get(2).getRank().equals(dealer.get(i).getRank())) {
+					r1c3.setEnabled(false);
+					System.out.println("r1c3 was pressed"); 
+				}
+			}
+		}
+		if (e.getSource() == r1c4) {
+			for(int i = 0; i < dealer.size(); i++) {
+				if(board.get(3).getRank().equals(dealer.get(i).getRank())) {
+					r1c4.setEnabled(false);
+					System.out.println("r1c4 was pressed"); 
+				}
+			}
+		}
+		if (e.getSource() == r2c1) {
+			for(int i = 0; i < dealer.size(); i++) {
+				if(board.get(4).getRank().equals(dealer.get(i).getRank())) {
+					r2c1.setEnabled(false);
+					System.out.println("r2c1 was pressed"); 
+				}
+			}
+		}
+		if (e.getSource() == r2c2) {
+			for(int i = 0; i < dealer.size(); i++) {
+				if(board.get(5).getRank().equals(dealer.get(i).getRank())) {
+					r2c2.setEnabled(false);
+					System.out.println("r2c2 was pressed"); 
+				}
+			}
+		}
+		if (e.getSource() == r2c3) {
+			for(int i = 0; i < dealer.size(); i++) {
+				if(board.get(6).getRank().equals(dealer.get(i).getRank())) {
+					r2c3.setEnabled(false);
+					System.out.println("r2c3 was pressed"); 
+				}
+			}
+		}
+		if (e.getSource() == r2c4) {
+			for(int i = 0; i < dealer.size(); i++) {
+				if(board.get(7).getRank().equals(dealer.get(i).getRank())) {
+					r2c4.setEnabled(false);
+					System.out.println("r2c4 was pressed"); 
+				}
+			}
+		}
+		//
+		if (e.getSource() == r3c1) {
+			for(int i = 0; i < dealer.size(); i++) {
+				if(board.get(8).getRank().equals(dealer.get(i).getRank())) {
+					r3c1.setEnabled(false);
+					System.out.println("r3c1 was pressed"); 
+				}
+			}
+		}
+		if (e.getSource() == r3c2) {
+			for(int i = 0; i < dealer.size(); i++) {
+				if(board.get(9).getRank().equals(dealer.get(i).getRank())) {
+					r3c2.setEnabled(false);
+					System.out.println("r3c2 was pressed"); 
+				}
+			}
+		}
+		if (e.getSource() == r3c3) {
+			for(int i = 0; i < dealer.size(); i++) {
+				if(board.get(10).getRank().equals(dealer.get(i).getRank())) {
+					r3c3.setEnabled(false);
+					System.out.println("r3c3 was pressed"); 
+				}
+			}
+		}
+		if (e.getSource() == r3c4) {
+			for(int i = 0; i < dealer.size(); i++) {
+				if(board.get(11).getRank().equals(dealer.get(i).getRank())) {
+					r3c4.setEnabled(false);
+					System.out.println("r3c4 was pressed"); 
+				}
+			}
+		}
+		//
+		if (e.getSource() == r4c1) {
+			for(int i = 0; i < dealer.size(); i++) {
+				if(board.get(12).getRank().equals(dealer.get(i).getRank())) {
+					r4c1.setEnabled(false);
+					System.out.println("r4c1 was pressed"); 
+					
+				}
+			}
+		}
+		if (e.getSource() == r4c2) {
+			for(int i = 0; i < dealer.size(); i++) {
+				if(board.get(13).getRank().equals(dealer.get(i).getRank())) {
+					r4c2.setEnabled(false);
+					System.out.println("r4c2 was pressed"); 
+					
+				}
+			}
+		}
+		if (e.getSource() == r4c3) {
+			for(int i = 0; i < dealer.size(); i++) {
+				if(board.get(14).getRank().equals(dealer.get(i).getRank())) {
+					r4c3.setEnabled(false);
+					System.out.println("r4c3 was pressed"); 
+					
+				}
+			}
+		}
+		if (e.getSource() == r4c4) {
+			for(int i = 0; i < dealer.size(); i++) {
+				if(board.get(15).getRank().equals(dealer.get(i).getRank())) {
+					r4c4.setEnabled(false);
+					System.out.println("r4c4 was pressed"); 
+					
+				}
+			}
+		}
+		
+		
+		//Loteria Button 
+		if(e.getSource() == checker) {
+			if(which_board == 0) {
+				//board_win.setText("4 Corners");
+			}
+			if(which_board == 1) {
+				//board_win.setText("Full");
+			}
+			if(which_board == 2) {
+				//board_win.setText("Vertical Line");
+			}
+			if(which_board == 3) {
+				//board_win.setText("Horizontal Line");
+			}
+			if(which_board == 4) {
+				//board_win.setText("Diagonal");
+			}
+			if(which_board == 5) {
+				//board_win.setText("4 In Any Corner");
+			}
+		}
 		
 		
 	}
     
-	private static String format(int i) {
+    public void howTo(int i) {
+		if(i == 0) {
+			board_win.setText("4 Corners");
+		}
+		if(i == 1) {
+			board_win.setText("Full");
+		}
+		if(i == 2) {
+			board_win.setText("Vertical Line");
+		}
+		if(i == 3) {
+			board_win.setText("Horizontal Line");
+		}
+		if(i == 4) {
+			board_win.setText("Diagonal");
+		}
+		if(i == 5) {
+			board_win.setText("4 In Any Corner");
+		}
+		
+	}
+
+    private static String format(int i) {
 		String result = String.valueOf(i);
 		if (result.length() == 1) {
 			result = "0" + result;
