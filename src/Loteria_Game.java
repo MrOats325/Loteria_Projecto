@@ -1,4 +1,4 @@
-package Loteria_Project.src;
+
 
 import java.awt.*;
 
@@ -49,12 +49,12 @@ public class Loteria_Game extends JPanel implements ActionListener {
 	private static final Color BLUE = new Color(200, 200, 255);
 	private static Color realRed = new Color(219, 0, 0);
 	
-	ImageIcon digagonal = new ImageIcon("src/Loteria_Project/LoteriaPDF/diagonal_board.png");
-	ImageIcon four_corner = new ImageIcon("src/Loteria_Project/LoteriaPDF/four_corners.png");
-	ImageIcon four_in_corner = new ImageIcon("src/Loteria_Project/LoteriaPDF/four_in_corner.png");
-	ImageIcon full_board = new ImageIcon("src/Loteria_Project/LoteriaPDF/full_board.png");
-	ImageIcon horizontal = new ImageIcon("src/Loteria_Project/LoteriaPDF/horiztonal_board.png");
-	ImageIcon vertical_line = new ImageIcon("src/Loteria_Project/LoteriaPDF/vertical_line.png");
+	ImageIcon digagonal = new ImageIcon("LoteriaPDF/diagonal_board.png");
+	ImageIcon four_corner = new ImageIcon("LoteriaPDF/four_corners.png");
+	ImageIcon four_in_corner = new ImageIcon("LoteriaPDF/four_in_corner.png");
+	ImageIcon full_board = new ImageIcon("LoteriaPDF/full_board.png");
+	ImageIcon horizontal = new ImageIcon("LoteriaPDF/horiztonal_board.png");
+	ImageIcon vertical_line = new ImageIcon("LoteriaPDF/vertical_line.png");
 
 	
 	public Loteria_Game() {

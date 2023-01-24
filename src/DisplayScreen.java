@@ -1,4 +1,4 @@
-package Loteria_Project.src;
+
 
 import java.awt.Color;
 import java.awt.GridLayout;
@@ -28,7 +28,7 @@ public class DisplayScreen extends JPanel {
         setLayout(new GridLayout(1,1));
 
         button = new JButton();
-        button.setIcon(new ImageIcon("src/Loteria_Project/LoteriaPDF/Loteria_loadingscreen.png"));
+        button.setIcon(new ImageIcon("LoteriaPDF/Loteria_loadingscreen.png"));
         button.addActionListener(new Listener());
         button.setBackground(realRed);
         

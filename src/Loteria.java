@@ -1,4 +1,4 @@
-package Loteria_Project.src; 
+ 
 
 import javax.swing.ImageIcon;
 

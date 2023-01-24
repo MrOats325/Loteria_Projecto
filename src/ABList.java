@@ -9,11 +9,11 @@
 // original capacity.
 //----------------------------------------------------------------------------
 
-package Loteria_Project.src;
+
 
 import java.util.Iterator;
 
-import ProjectOne.ListInterface;
+//import ProjectOne.ListInterface;
 
 public class ABList<T> implements ListInterface<T> {
 	protected final int DEFCAP = 100; // default capacity

@@ -14,7 +14,7 @@
 // and not by the equals method defined on the element class.
 //----------------------------------------------------------------------------
 
-package Loteria_Project.src;
+
 
 import java.util.*; // Iterator, Comparator
 

@@ -1,4 +1,4 @@
-package Loteria_Project.src;
+
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -13,7 +13,7 @@ public class Loteria_Instructions extends JPanel implements ActionListener {
 
 	public Loteria_Instructions() {
 
-		ImageIcon backdrop = new ImageIcon("src/Loteria_Project/LoteriaPDF/instructions.png");
+		ImageIcon backdrop = new ImageIcon("LoteriaPDF/instructions.png");
 
 		instro = new JLabel(backdrop);
 

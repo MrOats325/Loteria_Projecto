@@ -1,4 +1,4 @@
-package Loteria_Project.src;
+
 
 import java.util.Random;
 import java.util.Iterator;
@@ -15,7 +15,7 @@ public class Loteria_Cards {
 		deck = new ABList<Loteria>(NUMCARDS);
 		ImageIcon image;
 		for (Loteria.Rank rank : Loteria.Rank.values()) {
-			image = new ImageIcon("src/Loteria_Project/Loteria_Cards_png/Loteria" + "_" + rank + ".PNG");
+			image = new ImageIcon("Loteria_Cards_png/Loteria" + "_" + rank + ".PNG");
 			deck.add(new Loteria(rank, image));
 		}
 		deal1 = deck.iterator();

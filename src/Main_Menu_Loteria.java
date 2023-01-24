@@ -1,4 +1,4 @@
-package Loteria_Project.src;
+
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -24,6 +24,10 @@ public class Main_Menu_Loteria extends JPanel implements ActionListener {
 		play_game.setText("Play Game");
 		instructions.setText("Instructions");
 		quit.setText("Quit");
+		
+		play_game.setOpaque(true);
+		instructions.setOpaque(true);
+		quit.setOpaque(true);
 
 		play_game.setFont(new Font("Comic Sans", Font.BOLD, 25));
 		instructions.setFont(new Font("Comic Sans", Font.BOLD, 25));
@@ -44,6 +48,12 @@ public class Main_Menu_Loteria extends JPanel implements ActionListener {
 		play_game.setBounds(150, 125, 300, 100);
 		instructions.setBounds(150, 250, 300, 100);
 		quit.setBounds(150, 375, 300, 100);
+
+		
+		play_game.setBackground(realRed);
+		instructions.setBackground(realRed);
+		quit.setBackground(realRed);
+
 
 		setBackground(realRed);
 		setLayout(null);

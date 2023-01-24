@@ -1,4 +1,4 @@
-package Loteria_Project.src;
+
 
 import java.awt.Color;
 
@@ -30,9 +30,13 @@ public class LoteriaDriver {
 			buttonFrame.setVisible(false);
 			instructionsFrame.setVisible(false);
 			gameFrame.setVisible(false);
+           
             
+			
 			displayFrame.setLocation(buttonFrame.getX(), buttonFrame.getY());
 			displayFrame.setSize(buttonFrame.getWidth(), buttonFrame.getHeight());
+			
+
         }
 		
 		else if(num == 2) {
@@ -68,11 +72,11 @@ public class LoteriaDriver {
 			//gameFrame.setLocation(buttonFrame.getX(), buttonFrame.getY());
 			//gameFrame.setSize(buttonFrame.getWidth(), buttonFrame.getHeight());            
 
-            // Replace the content in frame3 with a new LoteriaPanel.
+            //Replace the content in frame3 with a new LoteriaPanel.
 			//gameFrame.getContentPane().removeAll();
 			//gameFrame.getContentPane().add(new CrapsPanel());
-			//gameFrame.revalidate();
-			//gameFrame.repaint();
+//			gameFrame.revalidate();
+//			gameFrame.repaint();
         }
 		
 	}
