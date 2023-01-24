@@ -1,5 +1,4 @@
 
-
 import java.awt.*;
 
 import javax.swing.*;
@@ -48,7 +47,7 @@ public class Loteria_Game extends JPanel implements ActionListener {
 	private static final Color GREEN = new Color(200, 255, 200);
 	private static final Color BLUE = new Color(200, 200, 255);
 	private static Color realRed = new Color(219, 0, 0);
-	
+
 	ImageIcon digagonal = new ImageIcon("LoteriaPDF/diagonal_board.png");
 	ImageIcon four_corner = new ImageIcon("LoteriaPDF/four_corners.png");
 	ImageIcon four_in_corner = new ImageIcon("LoteriaPDF/four_in_corner.png");
@@ -56,11 +55,8 @@ public class Loteria_Game extends JPanel implements ActionListener {
 	ImageIcon horizontal = new ImageIcon("LoteriaPDF/horiztonal_board.png");
 	ImageIcon vertical_line = new ImageIcon("LoteriaPDF/vertical_line.png");
 
-	
 	public Loteria_Game() {
-	
-		
-		
+
 		// Class of loteria cards
 		loteria = new Loteria_Cards();
 		dealt = new Loteria_Cards();
@@ -98,7 +94,7 @@ public class Loteria_Game extends JPanel implements ActionListener {
 					final Timer timer = (Timer) e.getSource();
 					timer.stop();
 				}
-				if (time % 5 == 0) {
+				if (time % 1 == 0) {
 					dealer.add(dealt.nextCard());
 					changer.setIcon(dealer.get(index_of_dealt).getImage());
 					index_of_dealt += 1;
@@ -260,8 +256,8 @@ public class Loteria_Game extends JPanel implements ActionListener {
 		to_win.setForeground(Color.BLACK);
 		add(to_win);
 
-		//Setting the board to win 
-		holder.setBounds(70,250,200,270);
+		// Setting the board to win
+		holder.setBounds(70, 250, 200, 270);
 		add(holder);
 
 		howTo(which_board);
@@ -391,89 +387,88 @@ public class Loteria_Game extends JPanel implements ActionListener {
 		if (e.getSource() == checker) {
 
 			if (which_board == 0) {
-				//board_win.setText("4 Corners");
-				//System.out.println(which_board);
+				// board_win.setText("4 Corners");
+				// System.out.println(which_board);
 				if (!r1c1.isEnabled() && !r1c2.isEnabled() && !r2c1.isEnabled() && !r2c2.isEnabled()) {
 					System.out.println("You've won 4 Corners");
 				}
 			}
-				if (which_board == 1) {
-					// board_win.setText("Full");
-					//System.out.println(which_board);
-					if (!r1c1.isEnabled() && !r1c2.isEnabled() && !r1c3.isEnabled() && !r1c4.isEnabled()
-							&& !r2c1.isEnabled() && !r2c2.isEnabled() && !r2c3.isEnabled() && !r2c4.isEnabled()
-							&& !r3c1.isEnabled() && !r3c2.isEnabled() && !r3c3.isEnabled() && !r3c4.isEnabled()
-							&& !r4c1.isEnabled() && !r4c2.isEnabled() && !r4c3.isEnabled() && !r4c4.isEnabled()) {
-						System.out.println("It worked");
-					}
+			if (which_board == 1) {
+				// board_win.setText("Full");
+				// System.out.println(which_board);
+				if (!r1c1.isEnabled() && !r1c2.isEnabled() && !r1c3.isEnabled() && !r1c4.isEnabled()
+						&& !r2c1.isEnabled() && !r2c2.isEnabled() && !r2c3.isEnabled() && !r2c4.isEnabled()
+						&& !r3c1.isEnabled() && !r3c2.isEnabled() && !r3c3.isEnabled() && !r3c4.isEnabled()
+						&& !r4c1.isEnabled() && !r4c2.isEnabled() && !r4c3.isEnabled() && !r4c4.isEnabled()) {
+					System.out.println("It worked");
 				}
-				if (which_board == 2) {
-					// board_win.setText("Vertical Line");
-					//System.out.println(which_board);
+			}
+			if (which_board == 2) {
+				// board_win.setText("Vertical Line");
+				// System.out.println(which_board);
 //					System.out.println(which_board);
-					if(!r1c1.isEnabled() && !r2c1.isEnabled() && !r3c1.isEnabled() && !r4c1.isEnabled()) {
-						System.out.println("You've won Vertical Line"); 
-					}
-					if(!r1c2.isEnabled() && !r2c2.isEnabled() && !r3c2.isEnabled() && !r4c2.isEnabled()) {
-						System.out.println("You've won Vertical Line"); 
-					}
-					if(!r1c3.isEnabled() && !r2c3.isEnabled() && !r3c3.isEnabled() && !r4c3.isEnabled()) {
-						System.out.println("You've won Vertical Line"); 
-					}
-					if(!r1c4.isEnabled() && !r2c4.isEnabled() && !r3c4.isEnabled() && !r4c4.isEnabled()) {
-						System.out.println("You've won Vertical Line"); 
-					}
+				if (!r1c1.isEnabled() && !r2c1.isEnabled() && !r3c1.isEnabled() && !r4c1.isEnabled()) {
+					System.out.println("You've won Vertical Line");
 				}
-				if (which_board == 3) {
-					// board_win.setText("Horizontal Line");
-					//System.out.println(which_board);
-					if(!r2c1.isEnabled() && !r2c2.isEnabled() && !r2c3.isEnabled() && !r2c4.isEnabled()) {
-						System.out.println("You've won Horizontal Line"); 
-					}
-					if(!r1c1.isEnabled() && !r1c2.isEnabled() && !r1c3.isEnabled() && !r1c4.isEnabled()) {
-						System.out.println("You've won Horizontal Line"); 
-					}
-					if(!r3c1.isEnabled() && !r3c2.isEnabled() && !r3c3.isEnabled() && !r3c4.isEnabled()) {
-						System.out.println("You've won Horizontal Line"); 
-					}
-					if(!r4c1.isEnabled() && !r4c2.isEnabled() && !r4c3.isEnabled() && !r4c4.isEnabled()) {
-						System.out.println("You've won Horizontal Line"); 
-					}
+				if (!r1c2.isEnabled() && !r2c2.isEnabled() && !r3c2.isEnabled() && !r4c2.isEnabled()) {
+					System.out.println("You've won Vertical Line");
 				}
-				if (which_board == 4) {
-					// board_win.setText("Diagonal");
-					//System.out.println(which_board);
-					if(!r1c4.isEnabled() && !r2c3.isEnabled() && !r3c2.isEnabled() && !r4c1.isEnabled()) {
-						System.out.println("You've won Diagonal"); 
-					}
-					if(!r1c1.isEnabled() && !r2c2.isEnabled() && !r3c3.isEnabled() && !r4c4.isEnabled()) {
-						System.out.println("You've won Diagonal"); 
-					}
+				if (!r1c3.isEnabled() && !r2c3.isEnabled() && !r3c3.isEnabled() && !r4c3.isEnabled()) {
+					System.out.println("You've won Vertical Line");
 				}
-				if (which_board == 5) {
-					// board_win.setText("4 In Any Corner");
-					//System.out.println(which_board);
-					if(!r1c1.isEnabled() && !r1c2.isEnabled() && !r2c1.isEnabled() && !r2c2.isEnabled()) {
-						System.out.println("You've won Diagonal"); 
-					}
-					if(!r1c3.isEnabled() && !r1c4.isEnabled() && !r2c3.isEnabled() && !r2c4.isEnabled()) {
-						System.out.println("You've won Diagonal");
-					}
-					if(!r3c1.isEnabled() && !r3c2.isEnabled() && !r4c1.isEnabled() && !r4c2.isEnabled()) {
-						System.out.println("You've won Diagonal"); 
-					}
-					if(!r3c3.isEnabled() && !r3c4.isEnabled() && !r4c3.isEnabled() && !r4c4.isEnabled()) {
-						System.out.println("You've won Diagonal"); 
-					}
+				if (!r1c4.isEnabled() && !r2c4.isEnabled() && !r3c4.isEnabled() && !r4c4.isEnabled()) {
+					System.out.println("You've won Vertical Line");
 				}
-
+			}
+			if (which_board == 3) {
+				// board_win.setText("Horizontal Line");
+				// System.out.println(which_board);
+				if (!r2c1.isEnabled() && !r2c2.isEnabled() && !r2c3.isEnabled() && !r2c4.isEnabled()) {
+					System.out.println("You've won Horizontal Line");
+				}
+				if (!r1c1.isEnabled() && !r1c2.isEnabled() && !r1c3.isEnabled() && !r1c4.isEnabled()) {
+					System.out.println("You've won Horizontal Line");
+				}
+				if (!r3c1.isEnabled() && !r3c2.isEnabled() && !r3c3.isEnabled() && !r3c4.isEnabled()) {
+					System.out.println("You've won Horizontal Line");
+				}
+				if (!r4c1.isEnabled() && !r4c2.isEnabled() && !r4c3.isEnabled() && !r4c4.isEnabled()) {
+					System.out.println("You've won Horizontal Line");
+				}
+			}
+			if (which_board == 4) {
+				// board_win.setText("Diagonal");
+				// System.out.println(which_board);
+				if (!r1c4.isEnabled() && !r2c3.isEnabled() && !r3c2.isEnabled() && !r4c1.isEnabled()) {
+					System.out.println("You've won Diagonal");
+				}
+				if (!r1c1.isEnabled() && !r2c2.isEnabled() && !r3c3.isEnabled() && !r4c4.isEnabled()) {
+					System.out.println("You've won Diagonal");
+				}
+			}
+			if (which_board == 5) {
+				// board_win.setText("4 In Any Corner");
+				// System.out.println(which_board);
+				if (!r1c1.isEnabled() && !r1c2.isEnabled() && !r2c1.isEnabled() && !r2c2.isEnabled()) {
+					System.out.println("You've won Diagonal");
+				}
+				if (!r1c3.isEnabled() && !r1c4.isEnabled() && !r2c3.isEnabled() && !r2c4.isEnabled()) {
+					System.out.println("You've won Diagonal");
+				}
+				if (!r3c1.isEnabled() && !r3c2.isEnabled() && !r4c1.isEnabled() && !r4c2.isEnabled()) {
+					System.out.println("You've won Diagonal");
+				}
+				if (!r3c3.isEnabled() && !r3c4.isEnabled() && !r4c3.isEnabled() && !r4c4.isEnabled()) {
+					System.out.println("You've won Diagonal");
+				}
+			}
 
 		}
 	}
 
 	public void howTo(int i) {
 		if (i == 0) {
-			holder.setIcon(four_corner);	
+			holder.setIcon(four_corner);
 		}
 		if (i == 1) {
 			holder.setIcon(full_board);

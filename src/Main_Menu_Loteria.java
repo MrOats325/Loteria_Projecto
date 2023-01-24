@@ -1,5 +1,4 @@
 
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,7 +23,7 @@ public class Main_Menu_Loteria extends JPanel implements ActionListener {
 		play_game.setText("Play Game");
 		instructions.setText("Instructions");
 		quit.setText("Quit");
-		
+
 		play_game.setOpaque(true);
 		instructions.setOpaque(true);
 		quit.setOpaque(true);
@@ -49,11 +48,9 @@ public class Main_Menu_Loteria extends JPanel implements ActionListener {
 		instructions.setBounds(150, 250, 300, 100);
 		quit.setBounds(150, 375, 300, 100);
 
-		
 		play_game.setBackground(realRed);
 		instructions.setBackground(realRed);
 		quit.setBackground(realRed);
-
 
 		setBackground(realRed);
 		setLayout(null);
@@ -62,7 +59,7 @@ public class Main_Menu_Loteria extends JPanel implements ActionListener {
 		add(play_game);
 		add(instructions);
 		add(quit);
-		
+
 	}
 
 	public void actionPerformed(ActionEvent e) {

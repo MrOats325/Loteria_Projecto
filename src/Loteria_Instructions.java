@@ -1,5 +1,4 @@
 
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -20,19 +19,17 @@ public class Loteria_Instructions extends JPanel implements ActionListener {
 		instro.setOpaque(true);
 
 		instro.setBounds(0, 0, 850, 550);
-		
-		playGame = new JButton(); 
-		playGame.setBounds(315,362,235,105); 
-		playGame.setFont(new Font("Comic Sans", Font.BOLD, 25)); 
+
+		playGame = new JButton();
+		playGame.setBounds(315, 362, 235, 105);
+		playGame.setFont(new Font("Comic Sans", Font.BOLD, 25));
 		playGame.setText("Play Game");
 		playGame.addActionListener(this);
 		playGame.setBackground(realRed);
 
-		
-
 		instro.setBackground(realRed);
 		add(instro);
-		add(playGame); 
+		add(playGame);
 		setLayout(null);
 		setVisible(true);
 
