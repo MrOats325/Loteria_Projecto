@@ -81,7 +81,6 @@ public class Loteria_Game extends JPanel implements ActionListener {
 		changer.setBounds(1150, 250, 130, 150);
 		add(changer);
 
-		final JFrame frm = new JFrame("Countdown");
 		final JLabel countdownLabel = new JLabel("00:00");
 		final Timer t = new Timer(1000, new ActionListener() {
 			int time = 0;
@@ -390,7 +389,7 @@ public class Loteria_Game extends JPanel implements ActionListener {
 				// board_win.setText("4 Corners");
 				// System.out.println(which_board);
 				if (!r1c1.isEnabled() && !r1c2.isEnabled() && !r2c1.isEnabled() && !r2c2.isEnabled()) {
-					System.out.println("You've won 4 Corners");
+					LoteriaDriver.changeFrame(5);
 				}
 			}
 			if (which_board == 1) {
@@ -400,7 +399,8 @@ public class Loteria_Game extends JPanel implements ActionListener {
 						&& !r2c1.isEnabled() && !r2c2.isEnabled() && !r2c3.isEnabled() && !r2c4.isEnabled()
 						&& !r3c1.isEnabled() && !r3c2.isEnabled() && !r3c3.isEnabled() && !r3c4.isEnabled()
 						&& !r4c1.isEnabled() && !r4c2.isEnabled() && !r4c3.isEnabled() && !r4c4.isEnabled()) {
-					System.out.println("It worked");
+					LoteriaDriver.changeFrame(5);
+
 				}
 			}
 			if (which_board == 2) {
@@ -408,58 +408,59 @@ public class Loteria_Game extends JPanel implements ActionListener {
 				// System.out.println(which_board);
 //					System.out.println(which_board);
 				if (!r1c1.isEnabled() && !r2c1.isEnabled() && !r3c1.isEnabled() && !r4c1.isEnabled()) {
-					System.out.println("You've won Vertical Line");
+					LoteriaDriver.changeFrame(5);
 				}
 				if (!r1c2.isEnabled() && !r2c2.isEnabled() && !r3c2.isEnabled() && !r4c2.isEnabled()) {
-					System.out.println("You've won Vertical Line");
+					LoteriaDriver.changeFrame(5);
 				}
 				if (!r1c3.isEnabled() && !r2c3.isEnabled() && !r3c3.isEnabled() && !r4c3.isEnabled()) {
-					System.out.println("You've won Vertical Line");
+					LoteriaDriver.changeFrame(5);
+
 				}
 				if (!r1c4.isEnabled() && !r2c4.isEnabled() && !r3c4.isEnabled() && !r4c4.isEnabled()) {
-					System.out.println("You've won Vertical Line");
+					LoteriaDriver.changeFrame(5);
 				}
 			}
 			if (which_board == 3) {
 				// board_win.setText("Horizontal Line");
 				// System.out.println(which_board);
 				if (!r2c1.isEnabled() && !r2c2.isEnabled() && !r2c3.isEnabled() && !r2c4.isEnabled()) {
-					System.out.println("You've won Horizontal Line");
+					LoteriaDriver.changeFrame(5);
 				}
 				if (!r1c1.isEnabled() && !r1c2.isEnabled() && !r1c3.isEnabled() && !r1c4.isEnabled()) {
-					System.out.println("You've won Horizontal Line");
+					LoteriaDriver.changeFrame(5);
 				}
 				if (!r3c1.isEnabled() && !r3c2.isEnabled() && !r3c3.isEnabled() && !r3c4.isEnabled()) {
-					System.out.println("You've won Horizontal Line");
+					LoteriaDriver.changeFrame(5);
 				}
 				if (!r4c1.isEnabled() && !r4c2.isEnabled() && !r4c3.isEnabled() && !r4c4.isEnabled()) {
-					System.out.println("You've won Horizontal Line");
+					LoteriaDriver.changeFrame(5);
 				}
 			}
 			if (which_board == 4) {
 				// board_win.setText("Diagonal");
 				// System.out.println(which_board);
 				if (!r1c4.isEnabled() && !r2c3.isEnabled() && !r3c2.isEnabled() && !r4c1.isEnabled()) {
-					System.out.println("You've won Diagonal");
+					LoteriaDriver.changeFrame(5);
 				}
 				if (!r1c1.isEnabled() && !r2c2.isEnabled() && !r3c3.isEnabled() && !r4c4.isEnabled()) {
-					System.out.println("You've won Diagonal");
+					LoteriaDriver.changeFrame(5);
 				}
 			}
 			if (which_board == 5) {
 				// board_win.setText("4 In Any Corner");
 				// System.out.println(which_board);
 				if (!r1c1.isEnabled() && !r1c2.isEnabled() && !r2c1.isEnabled() && !r2c2.isEnabled()) {
-					System.out.println("You've won Diagonal");
+					LoteriaDriver.changeFrame(5);
 				}
 				if (!r1c3.isEnabled() && !r1c4.isEnabled() && !r2c3.isEnabled() && !r2c4.isEnabled()) {
-					System.out.println("You've won Diagonal");
+					LoteriaDriver.changeFrame(5);
 				}
 				if (!r3c1.isEnabled() && !r3c2.isEnabled() && !r4c1.isEnabled() && !r4c2.isEnabled()) {
-					System.out.println("You've won Diagonal");
+					LoteriaDriver.changeFrame(5);
 				}
 				if (!r3c3.isEnabled() && !r3c4.isEnabled() && !r4c3.isEnabled() && !r4c4.isEnabled()) {
-					System.out.println("You've won Diagonal");
+					LoteriaDriver.changeFrame(5);
 				}
 			}
 

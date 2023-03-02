@@ -16,61 +16,53 @@ public class LoteriaDriver {
 	/** Displays The Game */
 	private static JFrame gameFrame;
 
-	static Color realRed = new Color(219, 0, 0);
+	/** Displays the Winning Screen */
+	private static JFrame winFrame;
+
+	private static final Color REAL_RED = new Color(219, 0, 0);
+	private static final int FRAME_WIDTH = 850;
+	private static final int FRAME_HEIGHT = 550;
+	private static final int GAME_FRAME_WIDTH = 1450;
+	private static final int GAME_FRAME_HEIGHT = 800;
 
 	/**
-	 * Given an int, switches to the corresponding JFrame (1, 2, 3, or 4).
+	 * Given an int, case to the corresponding JFrame (1, 2, 3, or 4).
 	 */
-
 	public static void changeFrame(int num) {
-		if (num == 1) {
-			displayFrame.setVisible(true);
-			buttonFrame.setVisible(false);
-			instructionsFrame.setVisible(false);
-			gameFrame.setVisible(false);
+		displayFrame.setVisible(false);
+		buttonFrame.setVisible(false);
+		instructionsFrame.setVisible(false);
+		gameFrame.setVisible(false);
+		winFrame.setVisible(false);
 
+		switch (num) {
+		case 1:
+			displayFrame.setVisible(true);
 			displayFrame.setLocation(buttonFrame.getX(), buttonFrame.getY());
 			displayFrame.setSize(buttonFrame.getWidth(), buttonFrame.getHeight());
-
-		}
-
-		else if (num == 2) {
-			displayFrame.setVisible(false);
+			break;
+		case 2:
 			buttonFrame.setVisible(true);
-			instructionsFrame.setVisible(false);
-			gameFrame.setVisible(false);
-
 			buttonFrame.setLocation(displayFrame.getX(), displayFrame.getY());
 			buttonFrame.setSize(displayFrame.getWidth(), displayFrame.getHeight());
-		}
-
-		else if (num == 3) {
-			displayFrame.setVisible(false);
-			buttonFrame.setVisible(false);
+			break;
+		case 3:
 			instructionsFrame.setVisible(true);
-			gameFrame.setVisible(false);
-
 			instructionsFrame.setLocation(buttonFrame.getX(), buttonFrame.getY());
 			instructionsFrame.setSize(buttonFrame.getWidth(), buttonFrame.getHeight());
-
-		}
-
-		else if (num == 4) {
-			displayFrame.setVisible(false);
-			buttonFrame.setVisible(false);
-			instructionsFrame.setVisible(false);
+			break;
+		case 4:
 			gameFrame.setVisible(true);
-
-			// gameFrame.setLocation(buttonFrame.getX(), buttonFrame.getY());
-			// gameFrame.setSize(buttonFrame.getWidth(), buttonFrame.getHeight());
-
-			// Replace the content in frame3 with a new LoteriaPanel.
-			// gameFrame.getContentPane().removeAll();
-			// gameFrame.getContentPane().add(new CrapsPanel());
-//			gameFrame.revalidate();
-//			gameFrame.repaint();
+			break;
+		case 5:
+			instructionsFrame.setVisible(true);
+			winFrame.setVisible(true);
+			winFrame.setLocation(buttonFrame.getX(), buttonFrame.getY());
+			winFrame.setSize(buttonFrame.getWidth(), buttonFrame.getHeight());
+			break;
+		default:
+			throw new IllegalArgumentException("Invalid frame number: " + num);
 		}
-
 	}
 
 	/**
@@ -79,13 +71,13 @@ public class LoteriaDriver {
 	 * @param jf a JFrame
 	 */
 	private static void setFrame(JFrame jf) {
-		jf.setSize(850, 550);
+		jf.setSize(FRAME_WIDTH, FRAME_HEIGHT);
 		jf.setLocationRelativeTo(null);
 		jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 	}
 
 	private static void gameFrame(JFrame jf) {
-		jf.setSize(1450, 800);
+		jf.setSize(GAME_FRAME_WIDTH, GAME_FRAME_HEIGHT);
 		jf.setLocationRelativeTo(null);
 		jf.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 
@@ -112,6 +104,10 @@ public class LoteriaDriver {
 		gameFrame.setContentPane(new Loteria_Game());
 		gameFrame.setVisible(false);
 
-	}
+		winFrame = new JFrame("Winner");
+		setFrame(winFrame);
+		winFrame.setContentPane(new Winner_Screen());
+		winFrame.setVisible(false);
 
+	}
 }
